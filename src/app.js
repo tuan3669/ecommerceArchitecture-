@@ -5,7 +5,8 @@ const compression = require('compression');
 const {
   default: helmet,
 } = require('helmet');
-const { checkOverload } = require('./helpers/check.connect');
+
+require('dotenv').config();
 
 // init middleware
 app.use(morgan('dev'));
