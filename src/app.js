@@ -5,6 +5,7 @@ const compression = require('compression');
 const {
   default: helmet,
 } = require('helmet');
+const { checkOverload } = require('./helpers/check.connect');
 
 // init middleware
 app.use(morgan('dev'));
@@ -12,7 +13,8 @@ app.use(helmet());
 // giảm nhẹ size giữa sever vs client
 app.use(compression());
 // init db
-
+require('./dbs/init.mongodb');
+// checkOverload()
 // init router
 app.get('/', (req, res, next) => {
   const str = 'helloo Tuan';
