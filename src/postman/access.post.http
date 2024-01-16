@@ -1,0 +1,43 @@
+@url_dev=http://localhost:3506/v1/api/
+
+### signup
+POST {{url_dev}}shop/signup
+Content-Type: application/json
+x-api-key : 2994635f2b6f660d5265b99598356322f44957048c07a08e2fef64099dbd496756b4fcef1d0f3db6ec7839d3ac0ec68f621809db5a4b395d942b0f534049b1b1
+
+{
+    "name": "admin",
+    "email": "admin@gmail.com",
+    "password": "12345"
+}
+### login
+POST {{url_dev}}shop/login
+Content-Type: application/json
+x-api-key : b3e22dd06b0ea21d764fb515db4af0be72165ec3109bc09dc41390bbfefbfe320aa8738dc4c04961a1e965825feb9a32f30aca1656020ac5429795361a478171
+
+{
+    "email": "admin@gmail.com",
+    "password": "12345"
+
+}
+### logout
+POST {{url_dev}}shop/logout
+Content-Type: application/json
+x-api-key : 2994635f2b6f660d5265b99598356322f44957048c07a08e2fef64099dbd496756b4fcef1d0f3db6ec7839d3ac0ec68f621809db5a4b395d942b0f534049b1b1
+authorization : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWE1MDJlNGFiZjEwZGMwZDFkNTY5OTciLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwNTMyOTU1NywiZXhwIjoxNzA1NTAyMzU3fQ.tmp7lSW2aNdAihI-_r0uhwASUwTH3nv6FmgZ_smaiDo
+x-client-id: 65a502e4abf10dc0d1d56997
+
+{
+     "email": "tuan000@gmail.com",
+    "password": "12345"
+}
+### resfresshtoken
+POST {{url_dev}}shop/refreshToken
+Content-Type: application/json
+x-api-key : 2994635f2b6f660d5265b99598356322f44957048c07a08e2fef64099dbd496756b4fcef1d0f3db6ec7839d3ac0ec68f621809db5a4b395d942b0f534049b1b1
+authorization : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWE1MDJlNGFiZjEwZGMwZDFkNTY5OTciLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwNTMyOTU1NywiZXhwIjoxNzA1NTAyMzU3fQ.tmp7lSW2aNdAihI-_r0uhwASUwTH3nv6FmgZ_smaiDo
+x-client-id: 65a502e4abf10dc0d1d56997
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWE1MDJlNGFiZjEwZGMwZDFkNTY5OTciLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwNTMyOTU1NywiZXhwIjoxNzA1OTM0MzU3fQ.CfgjgUSTR1qUdwJKFmbf3_xBZ-48lRUmKNiYwXeLOIk"
+}

@@ -11,19 +11,37 @@ require('dotenv').config();
 // init middleware
 app.use(morgan('dev'));
 app.use(helmet());
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 // giảm nhẹ size giữa sever vs client
 app.use(compression());
 // init db
 require('./dbs/init.mongodb');
 // checkOverload()
 // init router
-app.get('/', (req, res, next) => {
-  const str = 'helloo Tuan';
+app.use('/', require('./routes'));
 
-  return res.status(200).json({
-    message: 'Wellcome tuan',
-    metadata: str.repeat(100000),
+// handel error
+
+app.use((req, res, next) => {
+  const error = new Error('Not found');
+  error.status = 404;
+  next(error);
+});
+
+app.use((error, req, res, next) => {
+  const statusCode =
+    error.status || 500;
+  return res.status(statusCode).json({
+    status: 'error',
+    code: statusCode,
+    message:
+      error.message ||
+      'Internal Server Error',
   });
 });
-// handel error
 module.exports = app;
